@@ -20,6 +20,21 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  #heading {
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  #textarea-input {
+    width: 100%;
+  }
+
+  #text-output {
+    width: 100%;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
