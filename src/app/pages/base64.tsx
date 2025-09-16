@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import CryptoJS from "crypto-js";
+import { CopyButton } from "@/components/ui/shadcn-io/copy-button";
 import scramble from "../components/scramble";
 
 export default function Base64() {
@@ -46,34 +47,42 @@ export default function Base64() {
 
       <div id="text-output" className="mt-6 space-y-6 w-[500px]">
         {encoded && (
-          <div className="flex flex-wrap gap-2 items-start">
+          <div className="flex flex-wrap gap-2 items-center">
             <strong
-              className="p-4 bg-white/10 border-purple-500 rounded-lg text-purple-300 whitespace-nowrap"
+              className="p-3 bg-white/10 border-purple-500 rounded-lg text-purple-300 whitespace-nowrap"
             >
               Encoded:
             </strong>
             <div
               id="encode-box"
-              className="p-4 flex-1 bg-white/10 border border-purple-500 rounded-lg break-words text-purple-300"
+              className="max-w-[355px] p-3 flex-1 bg-white/10 border border-purple-500 rounded-lg break-words text-purple-300"
             >
               <p id="encode-text">{encoded}</p>
             </div>
+            <CopyButton
+              content={encoded}
+              onCopy={() => console.log("Link copied!")}
+            />
           </div>
         )}
 
         {decoded && (
-          <div className="flex flex-wrap gap-2 items-start">
+          <div className="flex flex-wrap gap-2 items-center">
             <strong
-              className="p-4 bg-white/10 border-blue-500 rounded-lg text-blue-300 whitespace-nowrap"
+              className="p-3 bg-white/10 border-blue-500 rounded-lg text-blue-300 whitespace-nowrap"
             >
               Decoded:
             </strong>
             <div
               id="decode-box"
-              className="p-4 bg-white/10 border border-blue-500 rounded-lg break-words text-blue-300"
+              className="max-w-[355px] p-3 bg-white/10 border border-blue-500 rounded-lg break-words text-blue-300"
             >
               <p id="decode-text">{decoded}</p>
             </div>
+            <CopyButton
+              content={decoded}
+              onCopy={() => console.log("Link copied!")}
+            />
           </div>
         )}
       </div>
