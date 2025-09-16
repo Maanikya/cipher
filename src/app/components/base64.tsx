@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { animate } from "animejs";
+import CryptoJS from "crypto-js";
 
 export default function Base64() {
   const [text, setText] = useState("");
@@ -57,13 +58,13 @@ export default function Base64() {
   // Encoding/decoding
   useEffect(() => {
     if (text) {
-      const encodedText = btoa(text);
+      const encodedText = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(text));
       setEncoded(encodedText);
       scramble("#encode-text", encodedText);
 
       const decodedText = (() => {
         try {
-          return atob(text);
+          return CryptoJS.enc.Utf8.stringify(CryptoJS.enc.Base64.parse(text));
         } catch {
           return "Invalid Base64!";
         }
