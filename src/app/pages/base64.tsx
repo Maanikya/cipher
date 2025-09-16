@@ -1,33 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { animate } from "animejs";
+import { useState, useEffect } from "react";
 import CryptoJS from "crypto-js";
+import FloatingBlob from "../components/FloatingBlob";
 
 export default function Base64() {
   const [text, setText] = useState("");
   const [encoded, setEncoded] = useState("");
   const [decoded, setDecoded] = useState("");
-  const blobRef = useRef(null);
-
-  // Floating blob
-  useEffect(() => {
-    if (blobRef.current) {
-      animate(blobRef.current, {
-        translateX: [
-          { value: 100, duration: 4000 },
-          { value: -100, duration: 4000 },
-        ],
-        translateY: [
-          { value: 50, duration: 5000 },
-          { value: -50, duration: 5000 },
-        ],
-        loop: true,
-        direction: "alternate",
-        easing: "easeInOutSine",
-      });
-    }
-  }, []);
 
   // Animate encode/decode with scrambling effect
   const scramble = (selector: string, finalText: string) => {
@@ -80,11 +60,7 @@ export default function Base64() {
   return (
     <div id="main" className="absolute w-full flex flex-col items-center p-6">
 
-      {/* Floating Blob */}
-      <div
-        ref={blobRef}
-        className="w-full h-[300px] bg-purple-600 opacity-20 rounded-full blur-3xl -z-10"
-      ></div>
+      <FloatingBlob />
 
       <h1 id="heading" className="text-5xl mt-2 mb-6 text-white drop-shadow-lg">
         Base64 Encrypt & Decrypt

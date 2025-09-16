@@ -1,4 +1,4 @@
-import Base64 from "./components/base64";
+import Base64 from "./pages/base64";
 
 export default function Home() {
   return (
