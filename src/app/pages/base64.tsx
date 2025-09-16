@@ -1,8 +1,5 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import CryptoJS from "crypto-js";
-import FloatingBlob from "../components/FloatingBlob";
 
 export default function Base64() {
   const [text, setText] = useState("");
@@ -58,9 +55,7 @@ export default function Base64() {
   }, [text]);
 
   return (
-    <div id="main" className="absolute w-full flex flex-col items-center p-6">
-
-      <FloatingBlob />
+    <div id="main" className="relative w-full flex flex-col items-center p-6">
 
       <h1 id="heading" className="text-5xl mt-2 mb-6 text-white drop-shadow-lg">
         Base64 Encrypt & Decrypt
