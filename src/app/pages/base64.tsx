@@ -38,7 +38,7 @@ export default function Base64() {
 
       <textarea
         id="textarea-input"
-        className="w-[500px] h-26 bg-black/40 border border-white/30 p-4 rounded-lg text-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all text-white"
+        className="w-[500px] h-20 bg-black/40 border border-white/30 p-4 rounded-lg text-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all text-white"
         placeholder="Type text or Base64 here..."
         value={text}
         onChange={(e) => setText(e.target.value)}
