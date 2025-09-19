@@ -1,9 +1,14 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
+} */
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
